@@ -1,0 +1,23 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --no-source-map --style=compressed ./scss:../assets/css",
+    "sass:watch": "sass --no-source-map --watch --update --style=compressed ./scss:../assets/css",
+    "gulp": "gulp",
+    "build": "npm run sass && npm run gulp build",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run gulp\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "gulp": "^5.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.89.2"
+  }
+}

@@ -1,0 +1,152 @@
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$size: 36;
+
+@for $i from 0 through $size {
+    .m-#{$i*4} {
+        margin: #{$i*0.4}rem !important;
+    }
+
+    .my-#{$i*4} {
+        margin: #{$i*0.4}rem 0 !important;
+    }
+
+    .mx-#{$i*4} {
+        margin-left: #{$i*0.4}rem !important;
+        margin-right: #{$i*0.4}rem !important;
+    }
+
+    .mt-#{$i*4} {
+        margin-top: #{$i*0.4}rem !important;
+    }
+
+    .mb-#{$i*4} {
+        margin-bottom: #{$i*0.4}rem !important;
+    }
+
+    .ml-#{$i*4} {
+        margin-left: #{$i*0.4}rem !important;
+    }
+
+    .mr-#{$i*4} {
+        margin-right: #{$i*0.4}rem !important;
+    }
+
+    .p-#{$i*4} {
+        padding: #{$i*0.4}rem !important;
+    }
+
+    .py-#{$i*4} {
+        padding-top: #{$i*0.4}rem !important;
+        padding-bottom: #{$i*0.4}rem !important;
+    }
+
+    .px-#{$i*4} {
+        padding-left: #{$i*0.4}rem !important;
+        padding-right: #{$i*0.4}rem !important;
+    }
+
+
+    .pt-#{$i*4} {
+        padding-top: #{$i*0.4}rem !important;
+    }
+
+    .pb-#{$i*4} {
+        padding-bottom: #{$i*0.4}rem !important;
+    }
+
+    .pl-#{$i*4} {
+        padding-left: #{$i*0.4}rem !important;
+    }
+
+    .pr-#{$i*4} {
+        padding-right: #{$i*0.4}rem !important;
+    }
+}
+
+@each $bp, $size in $breakpoints {
+    @media (min-width: #{$size}) {
+        @for $i from 0 through $size {
+            .m-#{$bp}-#{$i*4} {
+                margin: #{$i*0.4}rem !important;
+            }
+
+            .my-#{$bp}-#{$i*4} {
+                margin: #{$i*0.4}rem 0 !important;
+            }
+
+            .mx-#{$bp}-#{$i*4} {
+                margin-left: #{$i*0.4}rem !important;
+                margin-right: #{$i*0.4}rem !important;
+            }
+
+            .mt-#{$bp}-#{$i*4} {
+                margin-top: #{$i*0.4}rem !important;
+            }
+
+            .mb-#{$bp}-#{$i*4} {
+                margin-bottom: #{$i*0.4}rem !important;
+            }
+
+            .ml-#{$bp}-#{$i*4} {
+                margin-left: #{$i*0.4}rem !important;
+            }
+
+            .mr-#{$bp}-#{$i*4} {
+                margin-right: #{$i*0.4}rem !important;
+            }
+
+            .p-#{$bp}-#{$i*4} {
+                padding: #{$i*0.4}rem !important;
+            }
+
+            .py-#{$bp}-#{$i*4} {
+                padding-top: #{$i*0.4}rem !important;
+                padding-bottom: #{$i*0.4}rem !important;
+            }
+
+            .px-#{$bp}-#{$i*4} {
+                padding-left: #{$i*0.4}rem !important;
+                padding-right: #{$i*0.4}rem !important;
+            }
+
+
+            .pt-#{$bp}-#{$i*4} {
+                padding-top: #{$i*0.4}rem !important;
+            }
+
+            .pb-#{$bp}-#{$i*4} {
+                padding-bottom: #{$i*0.4}rem !important;
+            }
+
+            .pl-#{$bp}-#{$i*4} {
+                padding-left: #{$i*0.4}rem !important;
+            }
+
+            .pr-#{$bp}-#{$i*4} {
+                padding-right: #{$i*0.4}rem !important;
+            }
+        }
+    }
+}
+
+@for $i from 0 through 5 {
+    .rounded-#{$i*4} {
+        border-radius: $i * 0.4rem;
+    }
+}
+
+@each $bp, $size in $breakpoints {
+    @media (min-width: #{$size}) {
+        @for $i from 0 through 5 {
+            .rounded-#{$bp}-#{$i*4} {
+                padding-right: #{$i*0.4}rem !important;
+            }
+        }
+    }
+}

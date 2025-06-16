@@ -1,0 +1,13 @@
+@media (min-width:992px) {
+    .container {
+        // max-width: 1348px;
+        padding: 0 32px;
+    }
+}
+
+@media (min-width:1440px) {
+    .container {
+        max-width: 1348px;
+        padding: 0 50px;
+    }
+}
