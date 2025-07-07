@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:math";
+
 /* Helvetica Now Text */
 @font-face {
     font-family: "HelveticaNowText";
@@ -63,6 +66,7 @@
     --black: #000;
     --black-50: rgba(0, 0, 0, 0.05);
     --black-100: rgba(0, 0, 0, 0.1);
+    --black-200: rgba(0, 0, 0, 0.2);
     --black-600: rgba(0, 0, 0, 0.6);
     --green: #17a40b;
     --red: #ff0000;
@@ -71,11 +75,14 @@
 
     /* THEME COLORS*/
     --cta: #F28055;
-    --para: #525753;
-    --para: #525753;
+    --para: rgb(82, 87, 83);
+    --para-100: rgb(82, 87, 83, 0.1);
+    --para-200: rgb(82, 87, 83, 0.2);
+    --para-600: rgb(82, 87, 83, 0.6);
     --primary: #487859;
     --light-primary: #B2C88B;
-    --secondary: #EFFC3D;
+    --very-light-primary: #F0F4E8;
+    --secondary: #F0E7DD;
     --light-secondary: #EADDCF;
     --title: #1D1F1E;
     --secondary-gradient: linear-gradient(180deg, #F0E7DD 18.27%, rgba(240, 231, 221, 0) 100%);
@@ -86,30 +93,18 @@
     --font-RobertPro: "RoobertPRO", sans-serif;
 }
 
-html {
-    font-size: 62.5%;
-    margin-top: 0 !important;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 1.6rem;
-    font-family: var(--font-helvetica);
-    font-weight: 400;
-    color: var(--para);
-    line-height: normal;
-}
-
 $theme-color: (
+    "white":var(--white),
+    "black":var(--black),
+    "black-100":var(--black-100),
     "cta": var(--cta),
     "para": var(--para),
+    "para-200": var(--para-200),
+    "para-100": var(--para-100),
+    "para-600": var(--para-600),
     "primary": var(--primary),
     "light-primary": var(--light-primary),
+    "very-light-primary": var(--very-light-primary),
     "secondary": var(--secondary),
     "light-secondary": var(--light-secondary),
     "title": var(--title),
@@ -119,53 +114,125 @@ $theme-color: (
 
 @each $color, $value in $theme-color {
     .bg-#{$color} {
-        background: #{$value};
+        background: #{$value} !important;
+    }
+
+    .hover-bg-#{$color} {
+        &:hover {
+            background: #{$value} !important;
+        }
     }
 
     .text-#{$color} {
         color: #{$value} !important;
     }
-}
 
-$font-utilities: (
-    "text-56": "56px",
-    "text-48": "48px",
-    "text-40": "40px",
-    "text-32": "32px",
-    "text-22": "22px",
-    "text-20": "20px",
-    "text-18": "18px",
-    "text-16": "16px",
-);
+    .hover-text-#{$color} {
+        &:hover {
+            color: #{$value} !important;
+        }
+    }
 
-@each $font-size, $value in $font-utilities {
-    .#{$font-size} {
-        font-size: #{$value};
+    .border-#{$color} {
+        border: 1px solid #{$value} !important;
+    }
+
+    .border-b-#{$color} {
+        border-bottom: 1px solid #{$value} !important;
+    }
+
+    .border-t-#{$color} {
+        border-top: 1px solid #{$value} !important;
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+$font-utilities: (
+    "text-80": (min: 48px, // Minimum size
+        max: 80px, // Maximum size
+    ),
+    "text-56": (min: 36px,
+        max: 56px,
+    ),
+    "text-48": (min: 32px,
+        max: 48px,
+    ),
+    "text-40": (min: 28px,
+        max: 40px,
+    ),
+    "text-32": (min: 24px,
+        max: 32px,
+    ),
+    "text-28": (min: 20px,
+        max: 28px,
+    ),
+    "text-22": (min: 18px,
+        max: 22px,
+    ),
+    "text-20": (min: 16px,
+        max: 20px,
+    ),
+    "text-18": (min: 15px,
+        max: 18px,
+    ),
+    "text-16": (min: 14px,
+        max: 16px,
+    ),
+    "text-14": (min: 14px,
+        max: 14px,
+    ),
+    "text-12": (min: 12px,
+        max: 12px,
+    ),
+);
+
+// Viewport settings
+$min-vw: 375px;
+$max-vw: 1440px; // 375px + 1065px = 1440px
+
+// Helper function to remove units
+@function strip-unit($value) {
+    @return math.div($value, $value * 0 + 1);
+}
+
+@each $font-size, $sizes in $font-utilities {
+    .#{$font-size} {
+        $min-size: map.get($sizes, min);
+        $max-size: map.get($sizes, max);
+
+        font-size: clamp(#{$min-size},
+            calc(#{$min-size} + (#{strip-unit($max-size)} - #{strip-unit($min-size)}) * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}),
+            #{$max-size});
+    }
+}
+
+.text-roboert {
     font-family: var(--font-RobertPro);
-    font-weight: 700;
-    color: var(--title);
-    margin-bottom: 0;
 }
 
-p {
-    margin-bottom: 0;
+.text-helvatica {
+    font-family: var(--font-helvetica);
 }
 
-ul,
-ol {
-    padding: 0;
-    margin: 0;
+.container {
+    padding: 0 2rem;
+}
 
-    li {
-        list-style-type: none;
+.styled-list {
+    ul {
+        li {
+            position: relative;
+            padding-left: 2.4rem;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0.4rem;
+                left: 0;
+                width: 0.8rem;
+                height: 0.8rem;
+                background-color: var(--secondary);
+                transform: rotate(45deg);
+            }
+        }
     }
 }

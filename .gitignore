@@ -2,33 +2,9 @@
 node_modules/
 package-lock.json
 
-# Build output
-/public/
-dist/
-assets/css/*.css
-assets/css/*.map
-assets/js/*.js
-assets/js/*.map
-
-# SASS/SCSS Cache
-.sass-cache/
-*.css.map
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# System files
-.DS_Store
-Thumbs.db
-
 # VSCode settings (optional)
 .vscode/
 
-# OS-specific files
-ehthumbs.db
-Icon?
 
 # WordPress files not in your theme (optional)
 wp-content/uploads/
@@ -36,9 +12,6 @@ wp-content/plugins/
 wp-content/upgrade/
 wp-content/cache/
 
-# Composer (if used)
-vendor/
-composer.lock
 
 # Env files (if used)
 .env

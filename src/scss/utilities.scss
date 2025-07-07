@@ -7,6 +7,7 @@ $breakpoints: (
 
 $size: 36;
 
+/* MARGIN PADDDING */
 @for $i from 0 through $size {
     .m-#{$i*4} {
         margin: #{$i*0.4}rem !important;
@@ -135,7 +136,12 @@ $size: 36;
     }
 }
 
-@for $i from 0 through 5 {
+/* BORDER */
+.rounded {
+    border-radius: 50% !important;
+}
+
+@for $i from 0 through 10 {
     .rounded-#{$i*4} {
         border-radius: $i * 0.4rem;
     }
@@ -143,10 +149,74 @@ $size: 36;
 
 @each $bp, $size in $breakpoints {
     @media (min-width: #{$size}) {
-        @for $i from 0 through 5 {
+        @for $i from 0 through 10 {
             .rounded-#{$bp}-#{$i*4} {
-                padding-right: #{$i*0.4}rem !important;
+                border-radius: #{$i*0.4}rem !important;
             }
         }
     }
+}
+
+/* GAPS */
+@for $i from 0 through 8 {
+    $gap: $i * 0.4rem;
+
+    .gap-#{$i*4} {
+        gap: $gap !important;
+    }
+
+    .gap-x-#{$i*4} {
+        column-gap: $gap !important;
+    }
+
+    .gap-y-#{$i*4} {
+        row-gap: $gap !important;
+    }
+}
+
+@each $bp, $size in $breakpoints {
+    @media (min-width: #{$size}) {
+        @for $i from 0 through 8 {
+            $gap: $i * 0.4rem;
+
+            .gap-#{$bp}-#{$i*4} {
+                gap: $gap !important;
+            }
+
+            .gap-x-#{$bp}-#{$i*4} {
+                column-gap: $gap !important;
+            }
+
+            .gap-y-#{$bp}-#{$i*4} {
+                row-gap: $gap !important;
+            }
+        }
+    }
+}
+
+/* OPACITY */
+@for $i from 0 through 10 {
+    .opacity-#{$i*10} {
+        opacity: $i * 0.1;
+    }
+}
+
+@each $bp, $size in $breakpoints {
+    @media (min-width: #{$size}) {
+        @for $i from 0 through 10 {
+            .opacity-#{$bp}-#{$i*10} {
+                opacity: #{$i*0.1} !important;
+            }
+        }
+    }
+}
+
+@for $i from 3 through 9 {
+    .fw-#{$i * 100} {
+        font-weight: $i * 100;
+    }
+}
+
+.grecaptcha-badge {
+    display: none;
 }

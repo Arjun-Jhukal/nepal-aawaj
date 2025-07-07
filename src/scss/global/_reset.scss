@@ -1,0 +1,119 @@
+html {
+    font-size: 62.5%;
+    margin-top: 0 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-helvetica);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--para);
+    line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-RobertPro);
+    font-weight: 700;
+    color: var(--title);
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+a,
+svg,
+path,
+button {
+    transition: all 0.3s ease-in-out;
+}
+
+svg {
+    max-width: 100%;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not[type="number"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 1.2rem 1.6rem;
+    border: none;
+    background-color: transparent;
+    accent-color: var(--primary);
+
+    &::placeholder {
+        opacity: 0.5;
+    }
+}
+
+/* Remove spinner arrows in Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove spinner arrows in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--title);
+}
+
+iframe {
+    width: 100%;
+}
+
+// UNIVERSAL UTILITIES
+.wpcf7-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    padding: 0 2rem;
+}

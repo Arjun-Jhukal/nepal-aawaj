@@ -1,0 +1,53 @@
+.makura-modal {
+    position: fixed;
+    inset: 0;
+    background-color: var(--black-600);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(6px);
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+
+        &.drawer {
+            .makura-modal-content {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &.right-align {
+        justify-content: end;
+    }
+
+    &.drawer {
+        .makura-modal-content {
+            transform: translateX(100%);
+        }
+    }
+
+    .makura-modal-content {
+        background-color: var(--white);
+        border-radius: 8px;
+        min-width: 350px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+
+        [close-modal] {
+            position: absolute;
+            right: 16px;
+            top: 8px;
+            max-width: 12px;
+
+            svg {
+                max-width: 100%;
+            }
+        }
+    }
+}

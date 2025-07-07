@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="fi_845646" clip-path="url(#clip0_548_15774)">
+<g id="Group">
+<path id="Vector" d="M16 6.5252e-05C24.8365 6.5252e-05 32 7.16351 32 16C32 24.8365 24.8365 32 16 32C7.16351 32 6.63658e-05 24.8365 6.63658e-05 16C-0.0250774 7.18857 7.09757 0.025209 15.9089 6.5252e-05C15.9393 -2.17507e-05 15.9697 -2.17507e-05 16 6.5252e-05Z" fill="#FF0000"/>
+<g id="Group 1109">
+<rect id="Rectangle 328" x="9.10568" y="11.5806" width="3.5" height="16" transform="rotate(-45 9.10568 11.5806)" fill="white"/>
+<rect id="Rectangle 329" x="20.4194" y="9.10571" width="3.5" height="16" transform="rotate(45 20.4194 9.10571)" fill="white"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_548_15774">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>
