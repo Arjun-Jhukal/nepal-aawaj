@@ -1,62 +1,39 @@
 @use "sass:map";
 @use "sass:math";
 
-/* Helvetica Now Text */
 @font-face {
-    font-family: "HelveticaNowText";
+    font-family: "ProximaNova";
     font-weight: 400;
     font-display: swap;
-    src: url("../fonts/HelveticaNowText-Regular.woff2") format("woff2");
+    src: url("../fonts/ProximaNova-Regular.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "HelveticaNowText";
+    font-family: "ProximaNova";
     font-weight: 500;
     font-display: swap;
-    src: url("../fonts/HelveticaNowText-Medium.woff2") format("woff2");
+    src: url("../fonts/ProximaNova-Semibold.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "HelveticaNowText";
+    font-family: "ProximaNova";
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/ProximaNova-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ProximaNova";
     font-weight: 700;
     font-display: swap;
-    src: url("../fonts/HelveticaNowText-Bold.woff2") format("woff2");
+    src: url("../fonts/ProximaNova-ExtraBold.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "HelveticaNowText";
+    font-family: "ProximaNova";
     font-weight: 800;
     font-display: swap;
-    src: url("../fonts/HelveticaNowText-ExtraBold.woff2") format("woff2");
-}
-
-/* Roobert PRO */
-@font-face {
-    font-family: "RoobertPRO";
-    font-weight: 300;
-    font-display: swap;
-    src: url("../fonts/RoobertPRO-Light.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "RoobertPRO";
-    font-weight: 400;
-    font-display: swap;
-    src: url("../fonts/RoobertPRO-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "RoobertPRO";
-    font-weight: 500;
-    font-display: swap;
-    src: url("../fonts/RoobertPRO-Medium.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "RoobertPRO";
-    font-weight: 700;
-    font-display: swap;
-    src: url("../fonts/RoobertPRO-Bold.woff2") format("woff2");
+    src: url("../fonts/ProximaNova-Black.woff2") format("woff2");
 }
 
 :root {
@@ -89,27 +66,15 @@
     --primary-gradient: linear-gradient(180deg, #F0F4E8 18.27%, rgba(240, 244, 232, 0) 100%);
 
     /* FONTS */
-    --font-helvetica: "HelveticaNowText", sans-serif;
-    --font-RobertPro: "RoobertPRO", sans-serif;
+    --font-proxima: "ProximaNova", sans-serif;
+    --font-mono: "Mona Sans", sans-serif;
 }
 
 $theme-color: (
     "white":var(--white),
     "black":var(--black),
     "black-100":var(--black-100),
-    "cta": var(--cta),
-    "para": var(--para),
-    "para-200": var(--para-200),
-    "para-100": var(--para-100),
-    "para-600": var(--para-600),
-    "primary": var(--primary),
-    "light-primary": var(--light-primary),
-    "very-light-primary": var(--very-light-primary),
-    "secondary": var(--secondary),
-    "light-secondary": var(--light-secondary),
-    "title": var(--title),
-    "secondary-gradient": var(--secondary-gradient),
-    "primary-gradient": var(--primary-gradient)
+
 );
 
 @each $color, $value in $theme-color {
@@ -147,9 +112,6 @@ $theme-color: (
 }
 
 $font-utilities: (
-    "text-80": (min: 48px, // Minimum size
-        max: 80px, // Maximum size
-    ),
     "text-56": (min: 36px,
         max: 56px,
     ),
@@ -159,29 +121,17 @@ $font-utilities: (
     "text-40": (min: 28px,
         max: 40px,
     ),
-    "text-32": (min: 24px,
-        max: 32px,
-    ),
     "text-28": (min: 20px,
         max: 28px,
     ),
-    "text-22": (min: 18px,
-        max: 22px,
-    ),
-    "text-20": (min: 16px,
-        max: 20px,
-    ),
-    "text-18": (min: 15px,
+    "text-18": (min: 16px,
         max: 18px,
     ),
-    "text-16": (min: 14px,
+    "text-16": (min: 16px,
         max: 16px,
     ),
     "text-14": (min: 14px,
         max: 14px,
-    ),
-    "text-12": (min: 12px,
-        max: 12px,
     ),
 );
 

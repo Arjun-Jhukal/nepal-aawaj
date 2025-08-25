@@ -13,12 +13,12 @@ function register_resources()
 
     // Enqueue scripts
     wp_enqueue_script("jQuery", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js", array(), "3.7.1", true);
-    wp_enqueue_script("aos-animate", "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js", array('jQuery'), "2.3.4", true); 
+  
     wp_enqueue_script("slick", "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js", array('jQuery'), '1.9.0', true); 
     wp_enqueue_script("gsap", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.6/gsap.min.js", array('jQuery'), "3.12.6", true);
     wp_enqueue_script("scrollTrigger", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.6/ScrollTrigger.min.js", array('jQuery'), "3.12.6", true);  
     wp_enqueue_script("animtion-js", get_template_directory_uri() . "/assets/js/animation.min.js", array('jQuery', 'gsap','scrollTrigger','slick'), '1.0.0', true);
-    wp_enqueue_script("script", get_template_directory_uri() . "/assets/js/script.min.js", array('jQuery', 'aos-animate', 'slick'), '1.0.0', true);
+    wp_enqueue_script("script", get_template_directory_uri() . "/assets/js/script.min.js", array('jQuery',  'slick'), '1.0.0', true);
     wp_enqueue_script("makura", get_template_directory_uri() . "/assets/js/makura.min.js", array('jQuery'), '1.0.0', true);
 }
 
@@ -33,14 +33,11 @@ add_action('admin_enqueue_scripts', 'dashboard_resources');
 
 function preload_theme_fonts() {
     $fonts = [
-        'HelveticaNowText-Regular.woff2',
-        'HelveticaNowText-Medium.woff2',
-        'HelveticaNowText-Bold.woff2',
-        'HelveticaNowText-ExtraBold.woff2',
-        'RoobertPRO-Light.woff2',
-        'RoobertPRO-Regular.woff2',
-        'RoobertPRO-Medium.woff2',
-        'RoobertPRO-Bold.woff2',
+        'ProximaNova-Regular.woff2',
+        'ProximaNova-Semibold.woff2',
+        'ProximaNova-Bold.woff2',
+        'ProximaNova-ExtraBold.woff2',
+        'ProximaNova-Black.woff2',
     ];
 
     foreach ($fonts as $font) {
@@ -50,5 +47,10 @@ function preload_theme_fonts() {
             $font
         );
     }
+
+    // Preload Mona Sans (Google Fonts)
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+    echo '<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">';
 }
 add_action('wp_head', 'preload_theme_fonts', 1);

@@ -43,22 +43,6 @@ $(function () {
         bodyOverflowShow();
     })
 
-    /** MAKURA INCREMENT  */
-    $(".cart-item-changer .inc, .cart-item-changer .dec").on("click", function (e) {
-        e.preventDefault();
-
-        const $wrapper = $(this).closest(".cart-item-changer");
-        const $input = $wrapper.find("input[type='number']");
-        let currentValue = parseInt($input.val(), 10) || 0;
-
-        if ($(this).hasClass("inc")) {
-            $input.val(currentValue + 1);
-        } else if ($(this).hasClass("dec")) {
-            if (currentValue > 0) {
-                $input.val(currentValue - 1);
-            }
-        }
-    });
 
     /** CONTACT FORM 7 FIXES */
     $(function () {

@@ -145,8 +145,8 @@ $size: 36;
     }
 }
 
-@each $bp, $size in $breakpoints {
-    @media (min-width: #{$size}) {
+@each $bp, $screen in $breakpoints {
+    @media (min-width: #{$screen}) {
         @for $i from 0 through 13 {
             .rounded-#{$bp}-#{$i*4} {
                 border-radius: #{$i * 0.4}rem !important;
@@ -172,8 +172,8 @@ $size: 36;
     }
 }
 
-@each $bp, $size in $breakpoints {
-    @media (min-width: #{$size}) {
+@each $bp, $screen in $breakpoints {
+    @media (min-width: #{$screen}) {
         @for $i from 0 through 16 {
             $gap: $i * 0.4rem;
 
@@ -199,8 +199,8 @@ $size: 36;
     }
 }
 
-@each $bp, $size in $breakpoints {
-    @media (min-width: #{$size}) {
+@each $bp, $screen in $breakpoints {
+    @media (min-width: #{$screen}) {
         @for $i from 0 through 10 {
             .opacity-#{$bp}-#{$i*10} {
                 opacity: #{$i * 0.1} !important;
