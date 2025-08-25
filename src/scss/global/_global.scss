@@ -51,19 +51,12 @@
     --yellow: #ffa800;
 
     /* THEME COLORS*/
-    --cta: #F28055;
-    --para: rgb(82, 87, 83);
-    --para-100: rgb(82, 87, 83, 0.1);
-    --para-200: rgb(82, 87, 83, 0.2);
-    --para-600: rgb(82, 87, 83, 0.6);
-    --primary: #487859;
-    --light-primary: #B2C88B;
-    --very-light-primary: #F0F4E8;
-    --secondary: #F0E7DD;
-    --light-secondary: #EADDCF;
-    --title: #1D1F1E;
-    --secondary-gradient: linear-gradient(180deg, #F0E7DD 18.27%, rgba(240, 231, 221, 0) 100%);
-    --primary-gradient: linear-gradient(180deg, #F0F4E8 18.27%, rgba(240, 244, 232, 0) 100%);
+    --background: #F5F5F4;
+    --gray: #F5F5F4;
+    --para: #4B4843;
+    --primary: #FFAD2B;
+    --primary-light: #FFE689;
+    --title: #23211F;
 
     /* FONTS */
     --font-proxima: "ProximaNova", sans-serif;
@@ -74,6 +67,12 @@ $theme-color: (
     "white":var(--white),
     "black":var(--black),
     "black-100":var(--black-100),
+    "background": var(--background),
+    "gray": var(--gray),
+    "para": var(--para),
+    "primary": var(--primary),
+    "primary-light": var(--primary-light),
+    "title": var(--title),
 
 );
 
