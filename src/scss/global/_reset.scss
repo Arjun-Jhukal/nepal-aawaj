@@ -28,6 +28,10 @@ h6 {
     font-weight: 700;
     color: var(--title);
     margin-bottom: 0;
+
+    span {
+        color: var(--primary);
+    }
 }
 
 p {
@@ -104,6 +108,7 @@ a {
 
 iframe {
     width: 100%;
+
 }
 
 // UNIVERSAL UTILITIES
