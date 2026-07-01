@@ -1,0 +1,46 @@
+{
+    "key": "group_block_aside_featured",
+    "title": "Block: Aside Featured",
+    "fields": [
+        { "key": "field_af_show_most",  "label": "Show Most Read",  "name": "show_most_read", "type": "true_false", "ui": 1, "default_value": 1, "wrapper": { "width": "25" } },
+        { "key": "field_af_show_ad",    "label": "Show Ad",         "name": "show_ad",        "type": "true_false", "ui": 1, "default_value": 1, "wrapper": { "width": "25" } },
+        { "key": "field_af_show_trend", "label": "Show Trending",   "name": "show_trending",  "type": "true_false", "ui": 1, "default_value": 1, "wrapper": { "width": "25" } },
+        { "key": "field_af_show_photo", "label": "Show Photo",      "name": "show_photo",     "type": "true_false", "ui": 1, "default_value": 1, "wrapper": { "width": "25" } },
+        {
+            "key": "field_af_photo_image",
+            "label": "Photo of the day",
+            "name": "photo_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "conditional_logic": [[{ "field": "field_af_show_photo", "operator": "==", "value": "1" }]]
+        },
+        {
+            "key": "field_af_photo_caption",
+            "label": "Caption",
+            "name": "photo_caption",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "\"जेठको तातोमा भक्तपुरको दरबार क्षेत्रमा छाताको सहारा लिँदै पर्यटक।\"",
+            "conditional_logic": [[{ "field": "field_af_show_photo", "operator": "==", "value": "1" }]]
+        },
+        {
+            "key": "field_af_photo_credit",
+            "label": "Credit",
+            "name": "photo_credit",
+            "type": "text",
+            "default_value": "सुजन श्रेष्ठ",
+            "conditional_logic": [[{ "field": "field_af_show_photo", "operator": "==", "value": "1" }]]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/aside-featured" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

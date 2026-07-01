@@ -1,0 +1,34 @@
+{
+    "key": "group_block_contact_hours",
+    "title": "Block: Contact Us — Hours",
+    "fields": [
+        { "key": "field_ch_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "कार्य समय" },
+        { "key": "field_ch_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Working Hours" },
+        {
+            "key": "field_ch_rows",
+            "label": "Hours rows",
+            "name": "rows",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add row",
+            "collapsed": "field_ch_row_label",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_ch_row_label", "label": "Label", "name": "label", "type": "text", "wrapper": { "width": "40" } },
+                { "key": "field_ch_row_hours", "label": "Hours", "name": "hours", "type": "text", "wrapper": { "width": "60" } }
+            ]
+        },
+        { "key": "field_ch_emergency_label", "label": "Emergency label", "name": "emergency_label", "type": "text", "wrapper": { "width": "50" }, "default_value": "आपत्कालीन सूचना" },
+        { "key": "field_ch_emergency_value", "label": "Emergency contact", "name": "emergency_value", "type": "text", "wrapper": { "width": "50" }, "default_value": "+977 9800000000" }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/contact-hours" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

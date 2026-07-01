@@ -1,0 +1,42 @@
+{
+    "key": "group_block_latest_news",
+    "title": "Block: Latest News",
+    "fields": [
+        { "key": "field_ln_title_np",   "label": "Title (NP)",  "name": "title_np",  "type": "text", "wrapper": { "width": "40" }, "default_value": "ताजा समाचार" },
+        { "key": "field_ln_title_en",   "label": "Title (EN)",  "name": "title_en",  "type": "text", "wrapper": { "width": "40" }, "default_value": "Latest News" },
+        { "key": "field_ln_more_link",  "label": "More link",   "name": "more_link", "type": "url",  "wrapper": { "width": "20" }, "placeholder": "https://" },
+        {
+            "key": "field_ln_featured",
+            "label": "Featured grid (4 posts)",
+            "name": "featured_posts",
+            "type": "relationship",
+            "instructions": "2×2 grid at the top. Leave empty to auto-fill.",
+            "post_type": ["post"],
+            "filters": ["search", "post_type", "taxonomy"],
+            "min": 0,
+            "max": 4,
+            "return_format": "object"
+        },
+        {
+            "key": "field_ln_list",
+            "label": "Row list (4 posts)",
+            "name": "list_posts",
+            "type": "relationship",
+            "instructions": "Row cards below the grid. Leave empty to auto-fill.",
+            "post_type": ["post"],
+            "filters": ["search", "post_type", "taxonomy"],
+            "min": 0,
+            "max": 4,
+            "return_format": "object"
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/latest-news" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

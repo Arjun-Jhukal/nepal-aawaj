@@ -1,0 +1,217 @@
+// ============================================================
+// INLINE SHARE (meta area - compact)
+// ============================================================
+.share-inline {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+
+    .share-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        color: var(--white);
+        background: var(--share-color, var(--para));
+        transition: opacity 0.2s, transform 0.15s;
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.85;
+            transform: scale(1.1);
+        }
+
+        &--copy {
+            background: var(--gray);
+            color: var(--title);
+
+            &.copied {
+                background: var(--green);
+                color: var(--white);
+            }
+        }
+
+        &--more {
+            background: var(--gray);
+            color: var(--title);
+        }
+    }
+}
+
+// ============================================================
+// FULL SHARE BAR (after content)
+// ============================================================
+.share-bar {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--gray);
+    border-radius: 8px;
+
+    .share-bar__label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--title);
+        margin-bottom: 0.8rem;
+    }
+
+    .share-bar__btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .share-bar__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--white);
+        background: var(--share-color, var(--para));
+        transition: opacity 0.2s, transform 0.15s;
+
+        span {
+            @media (max-width: 576px) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        &--copy {
+            background: var(--title);
+
+            &.copied {
+                background: var(--green);
+            }
+        }
+
+        &--print {
+            background: var(--para);
+
+            @media print {
+                display: none;
+            }
+        }
+    }
+}
+
+// ============================================================
+// FLOATING STICKY SHARE (desktop: left, mobile: bottom)
+// ============================================================
+.share-floating {
+    position: fixed;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // Desktop: left side vertical
+    @media (min-width: 993px) {
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%) translateX(-20px);
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        &.visible {
+            transform: translateY(-50%) translateX(0);
+        }
+    }
+
+    // Mobile: bottom horizontal bar
+    @media (max-width: 992px) {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        background: var(--white);
+        box-shadow: 0 -2px 12px var(--black-100);
+        padding: 0.4rem 0.5rem;
+        transform: translateY(100%);
+        z-index: 40;
+
+        &.visible {
+            transform: translateY(0);
+        }
+    }
+
+    .share-floating__btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        color: var(--white);
+        background: var(--share-color, var(--para));
+        transition: transform 0.15s, box-shadow 0.2s;
+        text-decoration: none;
+
+        @media (min-width: 993px) {
+            box-shadow: 0 2px 8px var(--black-100);
+
+            &:hover {
+                transform: scale(1.15);
+                box-shadow: 0 4px 16px var(--black-200);
+            }
+        }
+
+        @media (max-width: 992px) {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            flex: 1;
+            max-width: 52px;
+        }
+    }
+}
+
+// ============================================================
+// PRINT STYLES
+// ============================================================
+@media print {
+    .share-inline,
+    .share-bar,
+    .share-floating,
+    .ad-slot,
+    .header,
+    .site-footer,
+    .single-news__sidebar,
+    .single-news__related,
+    .post-reactions,
+    .pwa-popup {
+        display: none !important;
+    }
+
+    .single-news__layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .single-news__body {
+        font-size: 12pt;
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "key": "group_block_contact_form",
+    "title": "Block: Contact Us — Form",
+    "fields": [
+        { "key": "field_cf_heading",   "label": "Heading",                "name": "heading",    "type": "text", "default_value": "सम्पर्क फारम" },
+        { "key": "field_cf_intro",     "label": "Intro",                  "name": "intro",      "type": "textarea", "rows": 3, "new_lines": "" },
+        { "key": "field_cf_shortcode", "label": "Form shortcode",         "name": "shortcode",  "type": "text", "instructions": "e.g. [contact-form-7 id=\"123\"]" },
+        { "key": "field_cf_html",      "label": "HTML embed (fallback)",  "name": "html_embed", "type": "textarea", "rows": 6, "new_lines": "" }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/contact-form" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

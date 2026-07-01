@@ -1,0 +1,63 @@
+{
+    "key": "group_block_category_news",
+    "title": "Block: Category News",
+    "fields": [
+        {
+            "key": "field_cn_columns",
+            "label": "Columns",
+            "name": "columns",
+            "type": "repeater",
+            "instructions": "Each column is a category split with an optional pinned feature post.",
+            "layout": "block",
+            "button_label": "Add column",
+            "collapsed": "field_cn_col_category",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_cn_col_category",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "taxonomy",
+                    "taxonomy": "category",
+                    "field_type": "select",
+                    "return_format": "object",
+                    "allow_null": 0,
+                    "wrapper": { "width": "40" }
+                },
+                { "key": "field_cn_col_title_np", "label": "Title (NP) override", "name": "title_np", "type": "text", "wrapper": { "width": "30" } },
+                { "key": "field_cn_col_title_en", "label": "Title (EN) override", "name": "title_en", "type": "text", "wrapper": { "width": "30" } },
+                {
+                    "key": "field_cn_col_feature",
+                    "label": "Feature post (pin)",
+                    "name": "feature_post",
+                    "type": "post_object",
+                    "post_type": ["post"],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_cn_col_list",
+                    "label": "List posts (max 3)",
+                    "name": "list_posts",
+                    "type": "relationship",
+                    "post_type": ["post"],
+                    "filters": ["search", "taxonomy"],
+                    "min": 0,
+                    "max": 3,
+                    "return_format": "object"
+                }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/category-news" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

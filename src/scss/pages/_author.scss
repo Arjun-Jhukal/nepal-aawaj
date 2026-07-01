@@ -1,0 +1,92 @@
+.author-page {
+    padding-bottom: 4rem;
+
+    .author-profile {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 2rem;
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .author-profile__avatar {
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid var(--gray);
+            }
+        }
+
+        .author-profile__info {
+            flex: 1;
+        }
+
+        .author-profile__name {
+            font-family: var(--font-mukta);
+            font-size: clamp(20px, 20px + (26 - 20) * (100vw - 375px) / 1065, 26px);
+            font-weight: 700;
+            color: var(--title);
+        }
+
+        .author-profile__bio {
+            font-size: 14px;
+            color: var(--para);
+            line-height: 1.6;
+            margin-top: 0.5rem;
+            max-width: 600px;
+        }
+
+        .author-profile__stats {
+            margin-top: 0.8rem;
+
+            .author-profile__stat {
+                font-size: 14px;
+                color: var(--para);
+
+                strong {
+                    color: var(--primary);
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .author-page__layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 3rem;
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .block__title {
+        font-family: var(--font-mukta);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--title);
+        margin-bottom: 1.5rem;
+        padding-left: 1.2rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+    }
+}

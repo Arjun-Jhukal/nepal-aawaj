@@ -1,0 +1,79 @@
+{
+    "key": "group_block_ad_slot",
+    "title": "Block: Ad Slot",
+    "fields": [
+        {
+            "key": "field_ad_slot_key",
+            "label": "Slot",
+            "name": "slot_key",
+            "type": "select",
+            "choices": {
+                "header_banner":  "Header banner (970Ã—90)",
+                "in_article":     "In-article (728Ã—90)",
+                "sidebar_top":    "Sidebar top (300Ã—250)",
+                "sidebar_sticky": "Sidebar sticky (300Ã—600)",
+                "footer_banner":  "Footer banner (970Ã—90)",
+                "custom":         "Custom"
+            },
+            "default_value": "in_article",
+            "return_format": "value",
+            "ui": 0,
+            "ajax": 0,
+            "allow_null": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_ad_aspect",
+            "label": "Custom aspect ratio",
+            "name": "aspect_ratio",
+            "type": "text",
+            "instructions": "Only used when Slot = Custom (e.g. \"1/1.2\", \"4/3\").",
+            "default_value": "",
+            "placeholder": "4/1",
+            "conditional_logic": [
+                [{ "field": "field_ad_slot_key", "operator": "==", "value": "custom" }]
+            ]
+        },
+        {
+            "key": "field_ad_label",
+            "label": "Placeholder label",
+            "name": "label",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_ad_code",
+            "label": "Ad code (HTML/JS)",
+            "name": "ad_code",
+            "type": "textarea",
+            "instructions": "Raw ad code, e.g. AdSense snippet. When filled, this wins over the image.",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_ad_image",
+            "label": "Static banner",
+            "name": "ad_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_ad_link",
+            "label": "Click-through URL",
+            "name": "link",
+            "type": "url",
+            "placeholder": "https://"
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/ad-slot" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

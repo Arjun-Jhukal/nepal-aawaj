@@ -1,0 +1,42 @@
+{
+    "key": "group_block_taxonomy_tabs",
+    "title": "Block: Taxonomy Tabs",
+    "fields": [
+        { "key": "field_tt_title", "label": "Title", "name": "title", "type": "text", "default_value": "श्रेणी अनुसार" },
+        {
+            "key": "field_tt_tabs",
+            "label": "Tabs",
+            "name": "tabs",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add tab",
+            "collapsed": "field_tt_tab_label",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_tt_tab_label", "label": "Label", "name": "label", "type": "text", "wrapper": { "width": "35" } },
+                {
+                    "key": "field_tt_tab_category",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "taxonomy",
+                    "taxonomy": "category",
+                    "field_type": "select",
+                    "return_format": "object",
+                    "allow_null": 0,
+                    "wrapper": { "width": "45" }
+                },
+                { "key": "field_tt_tab_count", "label": "Posts to show", "name": "count", "type": "number", "default_value": 5, "min": 1, "max": 20, "wrapper": { "width": "20" } }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/taxonomy-tabs" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

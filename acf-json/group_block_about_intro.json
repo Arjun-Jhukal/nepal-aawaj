@@ -1,0 +1,18 @@
+{
+    "key": "group_block_about_intro",
+    "title": "Block: About Us — Intro",
+    "fields": [
+        { "key": "field_ai_eyebrow", "label": "Eyebrow",  "name": "eyebrow", "type": "text", "wrapper": { "width": "30" }, "default_value": "About Us" },
+        { "key": "field_ai_heading", "label": "Heading",  "name": "heading", "type": "text", "wrapper": { "width": "70" }, "default_value": "राष्ट्रिय आवाज" },
+        { "key": "field_ai_lead",    "label": "Lead",     "name": "lead",    "type": "textarea", "rows": 4, "new_lines": "", "default_value": "सत्य, निष्पक्ष र विश्वसनीय समाचारको माध्यमबाट लोकतन्त्रको रक्षा।" }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-intro" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

@@ -1,0 +1,45 @@
+{
+    "key": "group_block_hero",
+    "title": "Block: Hero Grid",
+    "fields": [
+        {
+            "key": "field_hero_lead_post",
+            "label": "Lead post",
+            "name": "lead_post",
+            "type": "post_object",
+            "instructions": "Big left-hand card. Leave empty to auto-pick the most recent post.",
+            "required": 0,
+            "post_type": ["post"],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_hero_side_posts",
+            "label": "Side stack (max 4)",
+            "name": "side_posts",
+            "type": "relationship",
+            "instructions": "Up to 4 posts for the right-hand stack. Leave empty to auto-fill with recent posts.",
+            "required": 0,
+            "post_type": ["post"],
+            "taxonomy": [],
+            "filters": ["search", "post_type", "taxonomy"],
+            "elements": ["featured_image"],
+            "min": 0,
+            "max": 4,
+            "return_format": "object"
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/hero" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Lead post + 4 side posts for the homepage hero block.",
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

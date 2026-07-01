@@ -1,0 +1,54 @@
+{
+    "key": "group_block_breaking_ticker",
+    "title": "Block: Breaking Ticker",
+    "fields": [
+        { "key": "field_bt_enabled", "label": "Enabled", "name": "enabled", "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_bt_label",   "label": "Label",   "name": "label",   "type": "text", "default_value": "ब्रेकिङ", "wrapper": { "width": "50" } },
+        {
+            "key": "field_bt_mode",
+            "label": "Source",
+            "name": "mode",
+            "type": "radio",
+            "choices": { "latest": "Latest posts (auto)", "manual": "Manual list" },
+            "default_value": "latest",
+            "layout": "horizontal",
+            "return_format": "value",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_bt_count",
+            "label": "How many posts",
+            "name": "count",
+            "type": "number",
+            "default_value": 6,
+            "min": 1,
+            "max": 20,
+            "conditional_logic": [[{ "field": "field_bt_mode", "operator": "==", "value": "latest" }]]
+        },
+        {
+            "key": "field_bt_items",
+            "label": "Items",
+            "name": "items",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add item",
+            "collapsed": "field_bt_item_text",
+            "min": 0,
+            "max": 0,
+            "conditional_logic": [[{ "field": "field_bt_mode", "operator": "==", "value": "manual" }]],
+            "sub_fields": [
+                { "key": "field_bt_item_text", "label": "Text", "name": "text", "type": "text", "wrapper": { "width": "70" } },
+                { "key": "field_bt_item_url",  "label": "URL",  "name": "url",  "type": "url",  "wrapper": { "width": "30" }, "placeholder": "#" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/breaking-ticker" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

@@ -1,0 +1,33 @@
+{
+    "key": "group_block_about_timeline",
+    "title": "Block: About Us — Timeline",
+    "fields": [
+        { "key": "field_atl_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "हाम्रो यात्रा" },
+        { "key": "field_atl_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Our Journey" },
+        {
+            "key": "field_atl_events",
+            "label": "Events",
+            "name": "events",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add event",
+            "collapsed": "field_atl_event_title",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_atl_event_year",  "label": "Year",  "name": "year",  "type": "text", "wrapper": { "width": "20" }, "placeholder": "२०७५" },
+                { "key": "field_atl_event_title", "label": "Title", "name": "title", "type": "text", "wrapper": { "width": "80" } },
+                { "key": "field_atl_event_body",  "label": "Body",  "name": "body",  "type": "textarea", "rows": 3, "new_lines": "" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-timeline" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

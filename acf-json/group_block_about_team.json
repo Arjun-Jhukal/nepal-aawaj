@@ -1,0 +1,34 @@
+{
+    "key": "group_block_about_team",
+    "title": "Block: About Us — Team",
+    "fields": [
+        { "key": "field_at_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "टोली" },
+        { "key": "field_at_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Our Team" },
+        {
+            "key": "field_at_members",
+            "label": "Members",
+            "name": "members",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add member",
+            "collapsed": "field_at_member_name",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_at_member_image", "label": "Photo", "name": "image", "type": "image", "return_format": "array", "preview_size": "thumbnail", "wrapper": { "width": "30" } },
+                { "key": "field_at_member_name",  "label": "Name",  "name": "name",  "type": "text",  "wrapper": { "width": "35" } },
+                { "key": "field_at_member_role",  "label": "Role",  "name": "role",  "type": "text",  "wrapper": { "width": "35" } },
+                { "key": "field_at_member_bio",   "label": "Bio",   "name": "bio",   "type": "textarea", "rows": 3, "new_lines": "" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-team" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

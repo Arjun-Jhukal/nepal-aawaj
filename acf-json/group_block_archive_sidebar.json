@@ -1,0 +1,274 @@
+{
+    "key": "group_block_archive_sidebar",
+    "title": "Block: Archive Sidebar",
+    "fields": [
+        {
+            "key": "field_as_ep_tab",
+            "label": "Editor's Pick",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_as_ep_heading_np",
+            "label": "Heading (NP)",
+            "name": "editor_pick_heading_np",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "सम्पादक छनोट",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_as_ep_heading_en",
+            "label": "Heading (EN)",
+            "name": "editor_pick_heading_en",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "Editor's Pick",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_as_ep_items",
+            "label": "Items",
+            "name": "editor_pick_items",
+            "type": "repeater",
+            "instructions": "Add up to 3 cards. Each card needs a title; the rest is optional.",
+            "required": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "collapsed": "field_as_ep_item_title",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add card",
+            "sub_fields": [
+                {
+                    "key": "field_as_ep_item_label",
+                    "label": "Thumbnail label",
+                    "name": "label",
+                    "type": "text",
+                    "wrapper": { "width": "30", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "e.g. Election"
+                },
+                {
+                    "key": "field_as_ep_item_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "wrapper": { "width": "70", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_as_ep_item_meta",
+                    "label": "Meta (e.g. ४ दिन अघि)",
+                    "name": "meta",
+                    "type": "text",
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_as_ep_item_href",
+                    "label": "Link URL",
+                    "name": "href",
+                    "type": "url",
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "#"
+                }
+            ]
+        },
+
+        {
+            "key": "field_as_pv_tab",
+            "label": "Province Jump",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_as_pv_heading_np",
+            "label": "Heading (NP)",
+            "name": "province_heading_np",
+            "type": "text",
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "प्रदेशको खबर"
+        },
+        {
+            "key": "field_as_pv_heading_en",
+            "label": "Heading (EN)",
+            "name": "province_heading_en",
+            "type": "text",
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "By Province"
+        },
+        {
+            "key": "field_as_pv_items",
+            "label": "Links",
+            "name": "province_items",
+            "type": "repeater",
+            "instructions": "Each row is one chip in the grid. Toggle 'Full width' to span the row.",
+            "required": 0,
+            "collapsed": "field_as_pv_item_label",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add province",
+            "sub_fields": [
+                {
+                    "key": "field_as_pv_item_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "wrapper": { "width": "45", "class": "", "id": "" },
+                    "default_value": ""
+                },
+                {
+                    "key": "field_as_pv_item_href",
+                    "label": "URL",
+                    "name": "href",
+                    "type": "url",
+                    "wrapper": { "width": "40", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "#"
+                },
+                {
+                    "key": "field_as_pv_item_full",
+                    "label": "Full width",
+                    "name": "full_width",
+                    "type": "true_false",
+                    "wrapper": { "width": "15", "class": "", "id": "" },
+                    "ui": 1,
+                    "default_value": 0
+                }
+            ]
+        },
+
+        {
+            "key": "field_as_mr_tab",
+            "label": "Most Read",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_as_mr_heading_np",
+            "label": "Heading (NP)",
+            "name": "most_read_heading_np",
+            "type": "text",
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "सर्वाधिक पढिएको"
+        },
+        {
+            "key": "field_as_mr_heading_en",
+            "label": "Heading (EN)",
+            "name": "most_read_heading_en",
+            "type": "text",
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "Most Read"
+        },
+        {
+            "key": "field_as_mr_items",
+            "label": "Items",
+            "name": "most_read_items",
+            "type": "repeater",
+            "required": 0,
+            "collapsed": "field_as_mr_item_title",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add item",
+            "sub_fields": [
+                {
+                    "key": "field_as_mr_item_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "wrapper": { "width": "60", "class": "", "id": "" },
+                    "default_value": ""
+                },
+                {
+                    "key": "field_as_mr_item_meta",
+                    "label": "Meta (views)",
+                    "name": "meta",
+                    "type": "text",
+                    "wrapper": { "width": "40", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "e.g. ३२,४१२ हेरिएको"
+                },
+                {
+                    "key": "field_as_mr_item_href",
+                    "label": "URL",
+                    "name": "href",
+                    "type": "url",
+                    "wrapper": { "width": "100", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "#"
+                }
+            ]
+        },
+
+        {
+            "key": "field_as_ad_tab",
+            "label": "Ad Slot",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_as_ad_label",
+            "label": "Placeholder label",
+            "name": "ad_label",
+            "type": "text",
+            "wrapper": { "width": "60", "class": "", "id": "" },
+            "default_value": "Ad · 300 × 250"
+        },
+        {
+            "key": "field_as_ad_url",
+            "label": "Click-through URL (optional)",
+            "name": "ad_url",
+            "type": "url",
+            "wrapper": { "width": "40", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "https://"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/archive-sidebar"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Editable content for the Archive Sidebar block.",
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

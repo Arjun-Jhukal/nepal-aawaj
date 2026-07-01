@@ -1,0 +1,35 @@
+{
+    "key": "group_block_contact_branches",
+    "title": "Block: Contact Us — Branches",
+    "fields": [
+        { "key": "field_cb_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "हाम्रा शाखाहरू" },
+        { "key": "field_cb_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Our Branches" },
+        {
+            "key": "field_cb_branches",
+            "label": "Branches",
+            "name": "branches",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add branch",
+            "collapsed": "field_cb_branch_city",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_cb_branch_city",    "label": "City",    "name": "city",    "type": "text", "wrapper": { "width": "30" } },
+                { "key": "field_cb_branch_phone",   "label": "Phone",   "name": "phone",   "type": "text", "wrapper": { "width": "35" } },
+                { "key": "field_cb_branch_email",   "label": "Email",   "name": "email",   "type": "email","wrapper": { "width": "35" } },
+                { "key": "field_cb_branch_address", "label": "Address", "name": "address", "type": "text" },
+                { "key": "field_cb_branch_hours",   "label": "Hours",   "name": "hours",   "type": "textarea", "rows": 2, "new_lines": "" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/contact-branches" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

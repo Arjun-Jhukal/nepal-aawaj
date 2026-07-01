@@ -1,0 +1,257 @@
+.single-party {
+    padding-bottom: 4rem;
+
+    .single-party__layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 3rem;
+        padding-top: 2rem;
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Party Header
+    .party-header {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem;
+        background: var(--gray);
+        border-radius: 12px;
+        border-top: 4px solid var(--party-color, var(--primary));
+        margin-bottom: 2rem;
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .party-header__logo {
+            width: 100px;
+            min-width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            padding: 0.5rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .party-header__info {
+            flex: 1;
+
+            .party-header__name {
+                font-family: var(--font-mukta);
+                font-size: clamp(20px, 20px + (26 - 20) * (100vw - 375px) / 1065, 26px);
+                font-weight: 700;
+                color: var(--title);
+
+                .party-header__short {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: var(--para);
+                }
+            }
+
+            .party-header__meta {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+                margin-top: 0.8rem;
+
+                span {
+                    font-size: 14px;
+                    color: var(--para);
+
+                    strong {
+                        color: var(--title);
+                    }
+
+                    a {
+                        color: var(--primary);
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .party-header__symbol {
+            text-align: center;
+
+            img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+            }
+
+            span {
+                display: block;
+                font-size: 11px;
+                color: var(--para);
+                margin-top: 0.3rem;
+            }
+        }
+    }
+
+    // Sections
+    .party-section {
+        margin-bottom: 2.5rem;
+
+        .party-section__title {
+            font-family: var(--font-mukta);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--title);
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 70%;
+                background: var(--party-color, var(--primary));
+                border-radius: 2px;
+            }
+        }
+    }
+
+    // Members Grid
+    .party-members-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .party-member-card {
+        text-decoration: none;
+        text-align: center;
+        padding: 1.2rem;
+        border-radius: 8px;
+        border: 1px solid var(--gray);
+        transition: box-shadow 0.2s;
+
+        &:hover {
+            box-shadow: 0 4px 12px var(--black-100);
+
+            .party-member-card__name {
+                color: var(--primary);
+            }
+        }
+
+        .party-member-card__image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 0.8rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .party-member-card__name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--title);
+            transition: color 0.2s;
+        }
+
+        .party-member-card__role {
+            font-size: 12px;
+            color: var(--para);
+            display: block;
+            margin-top: 0.2rem;
+        }
+    }
+
+    // Party News
+    .party-news-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .party-news-item {
+        display: flex;
+        gap: 1rem;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 6px;
+        border: 1px solid var(--gray);
+        transition: box-shadow 0.2s;
+
+        &:hover {
+            box-shadow: 0 2px 8px var(--black-100);
+
+            h4 {
+                color: var(--primary);
+            }
+        }
+
+        .party-news-item__thumb {
+            width: 80px;
+            min-width: 80px;
+            aspect-ratio: var(--video);
+            border-radius: 4px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .party-news-item__content {
+            h4 {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--title);
+                line-height: 1.5;
+                transition: color 0.2s;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+
+            span {
+                font-size: 12px;
+                color: var(--para);
+                margin-top: 0.3rem;
+                display: block;
+            }
+        }
+    }
+}

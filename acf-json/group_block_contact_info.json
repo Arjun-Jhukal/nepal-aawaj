@@ -1,0 +1,36 @@
+{
+    "key": "group_block_contact_info",
+    "title": "Block: Contact Info",
+    "fields": [
+        { "key": "field_ci_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "सम्पर्क" },
+        { "key": "field_ci_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Get in touch" },
+        { "key": "field_ci_address",    "label": "Address",      "name": "address",    "type": "text", "default_value": "पुतलीसडक, काठमाडौं, नेपाल" },
+        { "key": "field_ci_phone",      "label": "Phone",        "name": "phone",      "type": "text", "wrapper": { "width": "50" }, "default_value": "+977-1-4444555" },
+        { "key": "field_ci_email",      "label": "Email",        "name": "email",      "type": "email","wrapper": { "width": "50" }, "default_value": "hello@nepalaawaj.com" },
+        { "key": "field_ci_hours",      "label": "Hours",        "name": "hours",      "type": "textarea", "rows": 3, "new_lines": "", "default_value": "आइतबार – शुक्रबार\n९:०० बिहान – ६:०० बेलुका" },
+        { "key": "field_ci_map",        "label": "Map embed (iframe HTML)", "name": "map_embed", "type": "textarea", "rows": 4, "new_lines": "" },
+        {
+            "key": "field_ci_social",
+            "label": "Social",
+            "name": "social",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_ci_social_fb", "label": "Facebook",  "name": "facebook",  "type": "url", "wrapper": { "width": "33" }, "placeholder": "https://" },
+                { "key": "field_ci_social_tw", "label": "Twitter / X", "name": "twitter", "type": "url", "wrapper": { "width": "33" }, "placeholder": "https://" },
+                { "key": "field_ci_social_yt", "label": "YouTube",   "name": "youtube",   "type": "url", "wrapper": { "width": "34" }, "placeholder": "https://" },
+                { "key": "field_ci_social_ig", "label": "Instagram", "name": "instagram", "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" },
+                { "key": "field_ci_social_wa", "label": "WhatsApp",  "name": "whatsapp",  "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/contact-info" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

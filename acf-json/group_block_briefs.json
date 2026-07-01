@@ -1,0 +1,45 @@
+{
+    "key": "group_block_briefs",
+    "title": "Block: News Briefs",
+    "fields": [
+        { "key": "field_br_title", "label": "Title", "name": "title", "type": "text", "default_value": "संक्षिप्त समाचार" },
+        {
+            "key": "field_br_source",
+            "label": "Source posts (auto)",
+            "name": "source_posts",
+            "type": "relationship",
+            "instructions": "When filled, items are pulled live from these posts and the manual list is ignored.",
+            "post_type": ["post"],
+            "filters": ["search", "post_type", "taxonomy"],
+            "min": 0,
+            "max": 0,
+            "return_format": "object"
+        },
+        {
+            "key": "field_br_items",
+            "label": "Manual items",
+            "name": "items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add brief",
+            "collapsed": "field_br_item_headline",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_br_item_headline", "label": "Headline", "name": "headline", "type": "text" },
+                { "key": "field_br_item_url",      "label": "URL",      "name": "url",      "type": "url",  "wrapper": { "width": "50" }, "placeholder": "#" },
+                { "key": "field_br_item_kicker",   "label": "Kicker",   "name": "kicker",   "type": "text", "wrapper": { "width": "25" } },
+                { "key": "field_br_item_time",     "label": "Time ago", "name": "time_ago", "type": "text", "wrapper": { "width": "25" }, "placeholder": "१ घन्टा अघि" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/briefs" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

@@ -1,0 +1,46 @@
+name: Deploy Theme
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download the latest version of the theme from GitHub.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install Node.js so the build tools can run.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: src/package-lock.json
+
+      # Install the Node packages required by the build scripts.
+      - name: Install Node dependencies
+        working-directory: src
+        run: npm ci
+
+      # Compile SCSS to CSS and minify JS before deployment.
+      - name: Build CSS and JS assets
+        working-directory: src
+        run: npm run build
+
+      # Upload the built theme files to the server.
+      - name: Deploy to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "."
+          target: "/public_html/wp-content/themes/nepal-aawaj"
+          rm: true

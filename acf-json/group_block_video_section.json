@@ -1,0 +1,60 @@
+{
+    "key": "group_block_video_section",
+    "title": "Block: Video Section",
+    "fields": [
+        { "key": "field_vs_title_np",  "label": "Title (NP)", "name": "title_np",  "type": "text", "wrapper": { "width": "40" }, "default_value": "मल्टिमिडिया" },
+        { "key": "field_vs_title_en",  "label": "Title (EN)", "name": "title_en",  "type": "text", "wrapper": { "width": "40" }, "default_value": "Video · Audio · Photo" },
+        { "key": "field_vs_more_link", "label": "More link",  "name": "more_link", "type": "url",  "wrapper": { "width": "20" }, "placeholder": "https://" },
+        {
+            "key": "field_vs_featured",
+            "label": "Featured video",
+            "name": "featured_video",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                { "key": "field_vs_f_url",      "label": "URL",      "name": "url",      "type": "url",  "wrapper": { "width": "50" }, "placeholder": "https://" },
+                { "key": "field_vs_f_title",    "label": "Title",    "name": "title",    "type": "text", "wrapper": { "width": "50" } },
+                { "key": "field_vs_f_meta",     "label": "Meta",     "name": "meta",     "type": "text", "wrapper": { "width": "33" }, "placeholder": "२८ मिनेटको डकुमेन्ट्री" },
+                { "key": "field_vs_f_tag",      "label": "Tag",      "name": "tag",      "type": "text", "wrapper": { "width": "33" } },
+                { "key": "field_vs_f_label",    "label": "Thumb label", "name": "label", "type": "text", "wrapper": { "width": "34" }, "placeholder": "Featured video" }
+            ]
+        },
+        {
+            "key": "field_vs_tiles",
+            "label": "Tiles (4)",
+            "name": "tiles",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add tile",
+            "collapsed": "field_vs_tile_title",
+            "min": 0,
+            "max": 4,
+            "sub_fields": [
+                {
+                    "key": "field_vs_tile_kind",
+                    "label": "Kind",
+                    "name": "kind",
+                    "type": "select",
+                    "choices": { "video": "Video", "podcast": "Podcast", "gallery": "Gallery", "live": "Live" },
+                    "default_value": "video",
+                    "return_format": "value",
+                    "wrapper": { "width": "20" }
+                },
+                { "key": "field_vs_tile_url",      "label": "URL",         "name": "url",      "type": "url",  "wrapper": { "width": "40" }, "placeholder": "https://" },
+                { "key": "field_vs_tile_label",    "label": "Thumb label", "name": "label",    "type": "text", "wrapper": { "width": "40" } },
+                { "key": "field_vs_tile_title",    "label": "Title",       "name": "title",    "type": "text", "wrapper": { "width": "60" } },
+                { "key": "field_vs_tile_meta",     "label": "Meta",        "name": "meta",     "type": "text", "wrapper": { "width": "20" } },
+                { "key": "field_vs_tile_tag",      "label": "Tag",         "name": "tag",      "type": "text", "wrapper": { "width": "20" } }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/video-section" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

@@ -1,0 +1,104 @@
+// Screen reader only (visually hidden H1 for front page)
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// PWA Install Popup
+.pwa-popup {
+    position: fixed;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: calc(100% - 2rem);
+    max-width: 420px;
+    transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.active {
+        bottom: 1rem;
+    }
+
+    .pwa-popup__inner {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 1.2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--gray);
+        position: relative;
+    }
+
+    .pwa-popup__close {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: var(--para);
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .pwa-popup__content {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .pwa-popup__icon {
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
+
+    .pwa-popup__text {
+        strong {
+            display: block;
+            font-size: 15px;
+            color: var(--title);
+        }
+
+        span {
+            font-size: 13px;
+            color: var(--para);
+        }
+    }
+
+    .pwa-popup__btn {
+        width: 100%;
+        padding: 0.7rem;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: var(--font-mukta);
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .pwa-popup__ios-hint {
+        display: none;
+        font-size: 13px;
+        color: var(--para);
+        text-align: center;
+        line-height: 1.5;
+        margin: 0;
+
+        strong {
+            color: var(--title);
+        }
+    }
+}

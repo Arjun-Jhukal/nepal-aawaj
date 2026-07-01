@@ -1,0 +1,32 @@
+{
+    "key": "group_block_about_principles",
+    "title": "Block: About Us — Principles",
+    "fields": [
+        { "key": "field_ap_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "सम्पादकीय सिद्धान्त" },
+        { "key": "field_ap_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Editorial Principles" },
+        {
+            "key": "field_ap_items",
+            "label": "Principles",
+            "name": "items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add principle",
+            "collapsed": "field_ap_item_title",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_ap_item_title", "label": "Title", "name": "title", "type": "text" },
+                { "key": "field_ap_item_body",  "label": "Body",  "name": "body",  "type": "textarea", "rows": 3, "new_lines": "" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-principles" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

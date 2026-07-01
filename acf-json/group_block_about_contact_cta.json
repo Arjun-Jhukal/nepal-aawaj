@@ -1,0 +1,21 @@
+{
+    "key": "group_block_about_contact_cta",
+    "title": "Block: About Us — Contact CTA",
+    "fields": [
+        { "key": "field_acc_heading",        "label": "Heading",         "name": "heading",        "type": "text",     "default_value": "समाचार सुझाव छ?" },
+        { "key": "field_acc_body",           "label": "Body",            "name": "body",           "type": "textarea", "rows": 3, "new_lines": "", "default_value": "तपाईंको कथा हाम्रो टोलीसँग साझा गर्नुहोस्।" },
+        { "key": "field_acc_button_label",   "label": "Button 1 label",  "name": "button_label",   "type": "text", "wrapper": { "width": "50" }, "default_value": "सम्पर्क गर्नुहोस्" },
+        { "key": "field_acc_button_url",     "label": "Button 1 URL",    "name": "button_url",     "type": "url",  "wrapper": { "width": "50" }, "default_value": "/contact" },
+        { "key": "field_acc_button_label_2", "label": "Button 2 label",  "name": "button_label_2", "type": "text", "wrapper": { "width": "50" } },
+        { "key": "field_acc_button_url_2",   "label": "Button 2 URL",    "name": "button_url_2",   "type": "url",  "wrapper": { "width": "50" } }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-contact-cta" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

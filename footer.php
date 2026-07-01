@@ -1,7 +1,13 @@
+<?php
+/**
+ * Theme footer. Closes <main> and renders the site footer.
+ */
+if (! defined('ABSPATH')) exit;
+?>
 </main>
 
-<?php get_template_part("/template-parts/modals/makura-toast",null);?>
-<?php wp_footer();?>
-</body>
+<?php get_template_part('template-parts/footer/site-footer'); ?>
 
+<?php wp_footer(); ?>
+</body>
 </html>

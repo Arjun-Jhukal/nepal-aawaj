@@ -1,0 +1,248 @@
+{
+    "key": "group_theme_settings",
+    "title": "Theme Settings",
+    "fields": [
+        {
+            "key": "field_ts_tab_identity",
+            "label": "Identity",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_ts_logo",
+            "label": "Logo",
+            "name": "ts_logo",
+            "type": "image",
+            "instructions": "Falls back to the built-in SVG when empty.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        { "key": "field_ts_site_name",        "label": "Site name",         "name": "ts_site_name",        "type": "text", "wrapper": { "width": "50" }, "default_value": "RASTRIYA AAWAJ" },
+        { "key": "field_ts_site_tagline",     "label": "Site tagline",      "name": "ts_site_tagline",     "type": "text", "wrapper": { "width": "50" }, "default_value": "सत्य, निष्पक्ष र राष्ट्रको आवाज" },
+        { "key": "field_ts_site_description", "label": "Site description",  "name": "ts_site_description", "type": "textarea", "rows": 3, "new_lines": "", "default_value": "राष्ट्रिय आवाज एक स्वतन्त्र डिजिटल समाचार पोर्टल हो, जसले सत्य, निष्पक्ष र विश्वसनीय समाचार र विश्लेषण प्रस्तुत गर्दछ।" },
+        { "key": "field_ts_copyright",        "label": "Copyright line",    "name": "ts_copyright",        "type": "text", "default_value": "Rastriya Aawaj Media Pvt. Ltd. · सर्वाधिकार सुरक्षित" },
+        {
+            "key": "field_ts_placeholder_image",
+            "label": "Default placeholder image",
+            "name": "ts_placeholder_image",
+            "type": "image",
+            "instructions": "Used by na_thumb() when a post has no featured image.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_ts_favicon",
+            "label": "Favicon",
+            "name": "ts_favicon",
+            "type": "image",
+            "instructions": "Square PNG, 512×512 recommended.",
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_ts_theme_color",
+            "label": "Theme color",
+            "name": "ts_theme_color",
+            "type": "color_picker",
+            "instructions": "Browser chrome + mobile address bar color.",
+            "default_value": "#DC1F26"
+        },
+
+        {
+            "key": "field_ts_tab_seo",
+            "label": "SEO",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_ts_no_index",
+            "label": "Hide from search engines",
+            "name": "ts_no_index",
+            "type": "true_false",
+            "instructions": "Emits noindex,nofollow on every page. Turn off once the site goes live.",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_ts_og_image",
+            "label": "Default social image",
+            "name": "ts_og_image",
+            "type": "image",
+            "instructions": "Used as og:image when a post has no featured image. 1200×630 recommended.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_ts_organization_name",
+            "label": "Organization name",
+            "name": "ts_organization_name",
+            "type": "text",
+            "instructions": "Used in JSON-LD Organization schema. Defaults to the site name.",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_ts_twitter_handle",
+            "label": "Twitter / X handle",
+            "name": "ts_twitter_handle",
+            "type": "text",
+            "instructions": "Used in twitter:site meta. No @ — just the handle.",
+            "wrapper": { "width": "50" },
+            "placeholder": "RastriyaAawaj"
+        },
+
+        {
+            "key": "field_ts_tab_contact",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        { "key": "field_ts_address", "label": "Address", "name": "ts_address", "type": "text", "default_value": "नयाँ बानेश्वर, काठमाडौं, नेपाल" },
+        { "key": "field_ts_phone",   "label": "Phone",   "name": "ts_phone",   "type": "text", "wrapper": { "width": "50" }, "default_value": "+977 1 4123456" },
+        { "key": "field_ts_email",   "label": "Email",   "name": "ts_email",   "type": "email","wrapper": { "width": "50" }, "default_value": "news@rastriyaaawaj.com" },
+
+        {
+            "key": "field_ts_tab_social",
+            "label": "Social",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        { "key": "field_ts_facebook_url",  "label": "Facebook",   "name": "ts_facebook_url",  "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" },
+        { "key": "field_ts_twitter_url",   "label": "X / Twitter","name": "ts_twitter_url",   "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" },
+        { "key": "field_ts_youtube_url",   "label": "YouTube",    "name": "ts_youtube_url",   "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" },
+        { "key": "field_ts_instagram_url", "label": "Instagram",  "name": "ts_instagram_url", "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" },
+        { "key": "field_ts_whatsapp_url",  "label": "WhatsApp",   "name": "ts_whatsapp_url",  "type": "url", "wrapper": { "width": "50" }, "placeholder": "https://" },
+
+        {
+            "key": "field_ts_tab_utility",
+            "label": "Utility Bar",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        { "key": "field_ts_ub_show",  "label": "Show utility bar", "name": "ts_ub_show",  "type": "true_false", "ui": 1, "default_value": 1 },
+        { "key": "field_ts_ub_date",  "label": "Date label",        "name": "ts_ub_date",  "type": "text", "default_value": "जेठ ७, २०८३ · बिहीबार" },
+        {
+            "key": "field_ts_ub_pills",
+            "label": "Data pills",
+            "name": "ts_ub_pills",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add pill",
+            "collapsed": "field_ts_ub_pill_label",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_ts_ub_pill_label", "label": "Label", "name": "label", "type": "text", "wrapper": { "width": "30" } },
+                { "key": "field_ts_ub_pill_value", "label": "Value", "name": "value", "type": "text", "wrapper": { "width": "30" } },
+                {
+                    "key": "field_ts_ub_pill_delta_dir",
+                    "label": "Delta",
+                    "name": "delta_dir",
+                    "type": "select",
+                    "choices": { "": "—", "up": "▲ up", "down": "▼ down" },
+                    "default_value": "",
+                    "return_format": "value",
+                    "wrapper": { "width": "20" },
+                    "allow_null": 1
+                },
+                { "key": "field_ts_ub_pill_delta_val", "label": "Delta value", "name": "delta_val", "type": "text", "wrapper": { "width": "20" } }
+            ]
+        },
+
+        {
+            "key": "field_ts_tab_ticker",
+            "label": "Header Ticker",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        { "key": "field_ts_ticker_show",    "label": "Show ticker", "name": "ts_ticker_show",    "type": "true_false", "ui": 1, "default_value": 1, "wrapper": { "width": "30" } },
+        { "key": "field_ts_ticker_label",   "label": "Pill label",  "name": "ts_ticker_label",   "type": "text", "wrapper": { "width": "30" }, "default_value": "ब्रेकिङ" },
+        { "key": "field_ts_ticker_update",  "label": "Update line", "name": "ts_ticker_update",  "type": "text", "wrapper": { "width": "40" }, "default_value": "अपडेट · 14:32 NPT" },
+        {
+            "key": "field_ts_ticker_items",
+            "label": "Items",
+            "name": "ts_ticker_items",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add item",
+            "collapsed": "field_ts_ticker_item_text",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_ts_ticker_item_text", "label": "Text", "name": "text", "type": "text", "wrapper": { "width": "70" } },
+                { "key": "field_ts_ticker_item_url",  "label": "URL",  "name": "url",  "type": "url",  "wrapper": { "width": "30" }, "placeholder": "#" }
+            ]
+        },
+
+        {
+            "key": "field_ts_tab_search",
+            "label": "Search Drawer",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        { "key": "field_ts_search_placeholder", "label": "Search placeholder", "name": "ts_search_placeholder", "type": "text", "default_value": "समाचार, विषय वा कुनै पनि शब्द खोज्नुहोस्..." },
+        { "key": "field_ts_search_button",      "label": "Search button text", "name": "ts_search_button",      "type": "text", "wrapper": { "width": "50" }, "default_value": "खोज" },
+
+        {
+            "key": "field_ts_tab_footer",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        { "key": "field_ts_footer_col1_heading", "label": "Column 1 heading",  "name": "ts_footer_col1_heading", "type": "text", "wrapper": { "width": "33" }, "default_value": "विभाग" },
+        { "key": "field_ts_footer_col2_heading", "label": "Column 2 heading",  "name": "ts_footer_col2_heading", "type": "text", "wrapper": { "width": "33" }, "default_value": "थप" },
+        { "key": "field_ts_footer_col3_heading", "label": "Contact heading",   "name": "ts_footer_col3_heading", "type": "text", "wrapper": { "width": "34" }, "default_value": "सम्पर्क" },
+        { "key": "field_ts_newsletter_heading",  "label": "Newsletter heading","name": "ts_newsletter_heading",  "type": "text", "wrapper": { "width": "50" }, "default_value": "न्युजलेटर" },
+        { "key": "field_ts_newsletter_blurb",    "label": "Newsletter blurb",  "name": "ts_newsletter_blurb",    "type": "text", "wrapper": { "width": "50" }, "default_value": "दैनिक मुख्य समाचार आफ्नो इमेलमा पाउनुहोस्।" },
+        { "key": "field_ts_newsletter_btn",      "label": "Newsletter button", "name": "ts_newsletter_btn",      "type": "text", "wrapper": { "width": "50" }, "default_value": "सब्स्क्राइब" },
+        { "key": "field_ts_newsletter_placeholder", "label": "Email placeholder", "name": "ts_newsletter_placeholder", "type": "text", "wrapper": { "width": "50" }, "default_value": "your@email.com" },
+        {
+            "key": "field_ts_footer_links",
+            "label": "Bottom links",
+            "name": "ts_footer_links",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add link",
+            "collapsed": "field_ts_footer_link_label",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_ts_footer_link_label", "label": "Label", "name": "label", "type": "text", "wrapper": { "width": "50" } },
+                { "key": "field_ts_footer_link_url",   "label": "URL",   "name": "url",   "type": "url",  "wrapper": { "width": "50" } }
+            ]
+        }
+    ],
+    "location": [
+        [
+            { "param": "options_page", "operator": "==", "value": "theme-settings" }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Site-wide identity, contact, social, header, and footer content.",
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

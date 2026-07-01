@@ -1,0 +1,33 @@
+{
+    "key": "group_block_about_stats",
+    "title": "Block: About Us — Stats",
+    "fields": [
+        { "key": "field_as_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "तथ्याङ्क" },
+        { "key": "field_as_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "In Numbers" },
+        {
+            "key": "field_as_stats",
+            "label": "Stats",
+            "name": "stats",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add stat",
+            "collapsed": "field_as_stat_label",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_as_stat_value",  "label": "Value",  "name": "value",  "type": "text", "wrapper": { "width": "30" }, "placeholder": "१२" },
+                { "key": "field_as_stat_suffix", "label": "Suffix", "name": "suffix", "type": "text", "wrapper": { "width": "20" }, "placeholder": "+" },
+                { "key": "field_as_stat_label",  "label": "Label",  "name": "label",  "type": "text", "wrapper": { "width": "50" } }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-stats" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

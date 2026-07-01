@@ -1,0 +1,53 @@
+{
+    "key": "group_block_featured_grid",
+    "title": "Block: Featured Grid",
+    "fields": [
+        {
+            "key": "field_fg_columns",
+            "label": "Columns (3)",
+            "name": "columns",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add column",
+            "collapsed": "field_fg_col_category",
+            "min": 0,
+            "max": 3,
+            "sub_fields": [
+                {
+                    "key": "field_fg_col_category",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "taxonomy",
+                    "taxonomy": "category",
+                    "field_type": "select",
+                    "return_format": "object",
+                    "allow_null": 0,
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_fg_col_posts",
+                    "label": "Posts (max 4)",
+                    "name": "posts",
+                    "type": "relationship",
+                    "post_type": ["post"],
+                    "filters": ["search", "taxonomy"],
+                    "min": 0,
+                    "max": 4,
+                    "return_format": "object"
+                }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/featured-grid" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

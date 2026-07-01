@@ -1,0 +1,30 @@
+{
+    "key": "group_block_opinion",
+    "title": "Block: Opinion",
+    "fields": [
+        { "key": "field_op_title_np",  "label": "Title (NP)", "name": "title_np",  "type": "text", "wrapper": { "width": "40" }, "default_value": "विचार र विश्लेषण" },
+        { "key": "field_op_title_en",  "label": "Title (EN)", "name": "title_en",  "type": "text", "wrapper": { "width": "40" }, "default_value": "Opinion · Columns" },
+        { "key": "field_op_more_link", "label": "More link",  "name": "more_link", "type": "url",  "wrapper": { "width": "20" }, "placeholder": "https://" },
+        {
+            "key": "field_op_columns",
+            "label": "Columnist posts (max 4)",
+            "name": "columns",
+            "type": "relationship",
+            "instructions": "Leave empty to auto-pull recent posts from the \"opinion\" category.",
+            "post_type": ["post"],
+            "filters": ["search", "taxonomy"],
+            "min": 0,
+            "max": 4,
+            "return_format": "object"
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/opinion" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

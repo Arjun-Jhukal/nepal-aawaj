@@ -1,0 +1,34 @@
+{
+    "key": "group_block_video_slider",
+    "title": "Block: Video Slider",
+    "fields": [
+        { "key": "field_vsl_title", "label": "Title", "name": "title", "type": "text", "default_value": "भिडियो" },
+        {
+            "key": "field_vsl_videos",
+            "label": "Videos",
+            "name": "videos",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add video",
+            "collapsed": "field_vsl_v_title",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_vsl_v_url",       "label": "URL",         "name": "url",       "type": "url",  "wrapper": { "width": "40" }, "placeholder": "https://" },
+                { "key": "field_vsl_v_title",     "label": "Title",       "name": "title",     "type": "text", "wrapper": { "width": "60" } },
+                { "key": "field_vsl_v_thumbnail", "label": "Thumbnail",   "name": "thumbnail", "type": "image", "return_format": "array", "preview_size": "thumbnail", "wrapper": { "width": "33" } },
+                { "key": "field_vsl_v_label",    "label": "Thumb label",  "name": "label",     "type": "text", "wrapper": { "width": "33" } },
+                { "key": "field_vsl_v_duration", "label": "Duration",     "name": "duration",  "type": "text", "wrapper": { "width": "34" }, "placeholder": "12:34" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/video-slider" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

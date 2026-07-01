@@ -1,0 +1,33 @@
+{
+    "key": "group_block_about_mission",
+    "title": "Block: About Us — Mission",
+    "fields": [
+        { "key": "field_am_heading_np", "label": "Heading (NP)", "name": "heading_np", "type": "text", "wrapper": { "width": "50" }, "default_value": "हाम्रो लक्ष्य" },
+        { "key": "field_am_heading_en", "label": "Heading (EN)", "name": "heading_en", "type": "text", "wrapper": { "width": "50" }, "default_value": "Our Mission" },
+        {
+            "key": "field_am_cards",
+            "label": "Cards",
+            "name": "cards",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add card",
+            "collapsed": "field_am_card_title",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_am_card_num",   "label": "Number", "name": "num",   "type": "text",     "wrapper": { "width": "20" }, "placeholder": "०१" },
+                { "key": "field_am_card_title", "label": "Title",  "name": "title", "type": "text",     "wrapper": { "width": "80" } },
+                { "key": "field_am_card_body",  "label": "Body",   "name": "body",  "type": "textarea", "rows": 3, "new_lines": "" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/about-mission" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

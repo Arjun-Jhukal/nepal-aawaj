@@ -1,0 +1,90 @@
+{
+    "key": "group_block_election_hub",
+    "title": "Block: Election Hub",
+    "fields": [
+        { "key": "field_eh_title_np",    "label": "Title (NP)",   "name": "title_np",    "type": "text", "wrapper": { "width": "40" }, "default_value": "निर्वाचन परिणाम" },
+        { "key": "field_eh_title_en",    "label": "Title (EN)",   "name": "title_en",    "type": "text", "wrapper": { "width": "40" }, "default_value": "Election Results" },
+        { "key": "field_eh_status",      "label": "Status text",  "name": "status_text", "type": "text", "wrapper": { "width": "20" }, "default_value": "अपडेट हुँदै" },
+        {
+            "key": "field_eh_last_updated",
+            "label": "Last updated",
+            "name": "last_updated",
+            "type": "date_time_picker",
+            "display_format": "j F Y, g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1
+        },
+        {
+            "key": "field_eh_parties",
+            "label": "Parties",
+            "name": "parties",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add party",
+            "collapsed": "field_eh_party_party",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_eh_party_party",
+                    "label": "Party",
+                    "name": "party",
+                    "type": "post_object",
+                    "post_type": ["party"],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "wrapper": { "width": "50" }
+                },
+                { "key": "field_eh_party_seats", "label": "Seats", "name": "seats", "type": "number", "default_value": 0, "min": 0, "wrapper": { "width": "25" } },
+                { "key": "field_eh_party_color", "label": "Color", "name": "color", "type": "color_picker", "default_value": "#DC1F26", "wrapper": { "width": "25" } }
+            ]
+        },
+        {
+            "key": "field_eh_constituencies",
+            "label": "Constituencies",
+            "name": "constituencies",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add constituency",
+            "collapsed": "field_eh_con_name",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                { "key": "field_eh_con_name", "label": "Constituency", "name": "name", "type": "text", "wrapper": { "width": "30" } },
+                {
+                    "key": "field_eh_con_candidate",
+                    "label": "Leading candidate",
+                    "name": "leading_candidate",
+                    "type": "post_object",
+                    "post_type": ["candidate"],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "wrapper": { "width": "30" }
+                },
+                {
+                    "key": "field_eh_con_party",
+                    "label": "Party",
+                    "name": "party",
+                    "type": "post_object",
+                    "post_type": ["party"],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "wrapper": { "width": "25" }
+                },
+                { "key": "field_eh_con_votes", "label": "Votes", "name": "votes", "type": "number", "default_value": 0, "min": 0, "wrapper": { "width": "15" } }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/election-hub" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}

@@ -1,0 +1,52 @@
+{
+    "key": "group_block_trending",
+    "title": "Block: Trending Tags",
+    "fields": [
+        { "key": "field_tr_title", "label": "Title", "name": "title", "type": "text", "default_value": "ट्रेन्डिङ विषय" },
+        {
+            "key": "field_tr_mode",
+            "label": "Mode",
+            "name": "mode",
+            "type": "radio",
+            "choices": { "auto": "Auto (most-used tags)", "manual": "Manual list" },
+            "default_value": "auto",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_tr_count",
+            "label": "How many tags",
+            "name": "count",
+            "type": "number",
+            "default_value": 10,
+            "min": 1,
+            "max": 30,
+            "conditional_logic": [[{ "field": "field_tr_mode", "operator": "==", "value": "auto" }]]
+        },
+        {
+            "key": "field_tr_tags",
+            "label": "Tags",
+            "name": "tags",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add tag",
+            "collapsed": "field_tr_tag_label",
+            "min": 0,
+            "max": 0,
+            "conditional_logic": [[{ "field": "field_tr_mode", "operator": "==", "value": "manual" }]],
+            "sub_fields": [
+                { "key": "field_tr_tag_label", "label": "Label", "name": "label", "type": "text", "wrapper": { "width": "50" } },
+                { "key": "field_tr_tag_url",   "label": "URL",   "name": "url",   "type": "url",  "wrapper": { "width": "50" }, "placeholder": "#" }
+            ]
+        }
+    ],
+    "location": [[{ "param": "block", "operator": "==", "value": "acf/trending" }]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1748563200
+}
