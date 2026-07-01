@@ -41,11 +41,12 @@ jobs:
 
       - name: Verify SSH key in CI runner
         run: |
+          set -x
           mkdir -p ~/.ssh
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keygen -lf ~/.ssh/id_ed25519
-          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT || 22 }} rastriya1@${{ secrets.SSH_HOST }} true
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -p ${{ secrets.SSH_PORT || 22 }} rastriya1@${{ secrets.SSH_HOST }} true
 
       - name: Deploy to server with rsync and private key file
         run: |
