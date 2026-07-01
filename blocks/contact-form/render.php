@@ -25,10 +25,11 @@ $html      = na_field('html_embed', null, '');
         } elseif ($html) {
             echo wp_kses_post($html);
         } else { ?>
-            <div class="contact-form-block__placeholder">
-                <strong>Contact Form 7 shortcode goes here.</strong><br>
-                Paste a shortcode like <code>[contact-form-7 id="123" title="Contact"]</code> into the block's <em>Shortcode</em> field.
-            </div>
+        <div class="contact-form-block__placeholder">
+            <strong>Contact Form 7 shortcode goes here.</strong><br>
+            Paste a shortcode like <code>[contact-form-7 id="123" title="Contact"]</code> into the block's
+            <em>Shortcode</em> field.
+        </div>
         <?php } ?>
     </div>
 </section>
