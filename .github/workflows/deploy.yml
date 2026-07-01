@@ -39,15 +39,10 @@ jobs:
         working-directory: src
         run: npm run build
 
-      # Use ssh-agent with the repository private key and rsync over SSH.
-      - name: Start SSH agent and load key
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy to server with rsync
+      - name: Deploy to server with rsync and private key file
         run: |
-          mkdir -p /tmp/deploy
           mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p ${{ secrets.SSH_PORT || 22 }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          rsync -avz --delete --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude '.vscode' --exclude '*.log' --exclude 'src/node_modules' --exclude 'src/.git' ./ rastriya1@${{ secrets.SSH_HOST }}:/public_html/wp-content/themes/nepal-aawaj
+          rsync -avz --delete --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude '.vscode' --exclude '*.log' --exclude 'src/node_modules' --exclude 'src/.git' -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" ./ rastriya1@${{ secrets.SSH_HOST }}:/public_html/wp-content/themes/nepal-aawaj
