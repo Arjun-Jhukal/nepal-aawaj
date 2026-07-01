@@ -39,14 +39,13 @@ jobs:
         working-directory: src
         run: npm run build
 
-      # Upload the built theme files to the server.
-      - name: Deploy to server
-        uses: appleboy/scp-action@v1.0.0
+      # Use ssh-agent with the repository private key and rsync over SSH.
+      - name: Start SSH agent and load key
+        uses: webfactory/ssh-agent@v0.8.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT || 22 }}
-          source: "."
-          target: "/public_html/wp-content/themes/nepal-aawaj"
-          rm: true
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server with rsync
+        run: |
+          mkdir -p /tmp/deploy
+          rsync -avz --delete --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude '.vscode' --exclude '*.log' --exclude 'src/node_modules' --exclude 'src/.git' ./ rastriya1@${{ secrets.SSH_HOST }}:/public_html/wp-content/themes/nepal-aawaj
