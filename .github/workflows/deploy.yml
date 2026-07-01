@@ -1,4 +1,4 @@
-name: Deploy Theme
+name: Deploy Rastriya Aawaj
 
 on:
   push:
@@ -20,12 +20,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('src/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       # Install the Node packages required by the build scripts.
       - name: Install Node dependencies
         working-directory: src
-        run: npm ci
+        run: npm install
 
       # Compile SCSS to CSS and minify JS before deployment.
       - name: Build CSS and JS assets
